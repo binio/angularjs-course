@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Databinding, filtering, iterating</title>
+</head>
+<body ng-app ng-init="name='thomas'">
+<h3>Data binding</h3>
+Name <input type="text" ng-model="name"/>{{name}}
+<hr>
+<h3>Directives and expresions</h3>
+<ul>
+    <li>directives teach html new tricks</li>
+    <li>can data binding</li>
+    <li>controllers modules</li>
+    <li>events</li>
+    <li>modify css</li>
+    <li>check if views are loaded</li>
+</ul>
+
+<hr/>
+<h3>ng-hide</h3>
+<div ng-hide="isHidden">
+    <input type="text" ng-model="name"/>{{name}}
+    <button ng-click="name='Adam'">Click me</button>
+</div>
+<input type="checkbox" ng-model="isHidden">
+<hr/>
+<h3>ng-bind</h3>
+<span ng-bind="name"></span>
+<hr/>
+<h3>ng-cloak</h3>
+<span ng-bind="name"></span>
+<hr/>
+<h3>ng-switch</h3>
+<span ng-bind="name"></span>
+<hr/>
+<h3>ng-class</h3>
+<span ng-bind="name"></span>
+<hr/>
+<h3>ng-show</h3>
+<span ng-bind="name"></span>
+<hr/>
+<script src="../includes/angular.js"></script>
+</body>
+</html>
