@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Databinding, filtering, iterating</title>
 </head>
-<body ng-app ng-init="name='thomas'">
+<body ng-app ng-init="data={username:'thomas', loggedin:false}">
 <h3>Data binding</h3>
 Name <input type="text" ng-model="name"/>{{name}}
 <hr>
@@ -30,9 +30,16 @@ Name <input type="text" ng-model="name"/>{{name}}
 <span ng-bind="name"></span>
 <hr/>
 <h3>ng-cloak</h3>
-<span ng-bind="name"></span>
+<div ng-cloak>
+
+    <span ng-bind="name">HELLO ME</span>
+</div>
 <hr/>
 <h3>ng-switch</h3>
+<div ng-switch on="data.loggedin">
+    <span ng-switch-when="true">LOGGED IN</span>
+    <span ng-switch-default="false">LOG IN</span>
+</div>
 <span ng-bind="name"></span>
 <hr/>
 <h3>ng-class</h3>
