@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>Controllers modules scope</title>
 </head>
-<body ng-app>
+<body ng-app="customersApp">
 Filter: <input type="text" ng-model="customerFilter.name">
-<table>
+<table data-ng-controller="CustomersController">
     <tr>
         <td ng-click="doSort('name')">name</td>
         <td ng-click="doSort('joined')">date</td>
         <td ng-click="doSort('joined')">joined</td>
         <td ng-click="doSort('orderTotal')">orderTotal</td>
     </tr>
-    <tr ng-repeat="cust in customers |filter:customerFilter | orderBy:sortBy:reverse">
+    <tr data-ng-repeat="cust in customers |filter:customerFilter | orderBy:sortBy:reverse">
 
         <td>{{cust.name | uppercase}}</td>
         <td>{{cust.joined | date}}</td>
@@ -23,6 +23,9 @@ Filter: <input type="text" ng-model="customerFilter.name">
     </tr>
 </table>
 <script src="../includes/angular.js"></script>
+<script>
+    var app = angular.module('customersApp', []);
+</script>
 <script src="controllers/CustomerController.js"></script>
 </body>
 </html>
