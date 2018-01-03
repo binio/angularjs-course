@@ -53,13 +53,14 @@ Name <input type="text" ng-model="name"/>{{name}}
 <ul>
     <li ng-repeat="person in people">{{person.name}} from {{person.city}}</li>
 </ul>
+<hr/>
 <table>
     <tr ng-repeat="person in people">
         <td>{{person.name}}</td>
         <td>{{person.city}}</td>
     </tr>
 </table>
-
+<hr/>
 <div ng-init="customers=[{joined:'2000-12-10', name:'thomas', city:'london', orderTotal:2001},{joined:'2000-10-10', name:'adam', city:'sutton', orderTotal:2001},{joined:'2000-12-11', name:'john', city:'croydon', orderTotal:2001}]"></div>
 Filter: <input type="text" ng-model="customerFilter.name">
 <table>
