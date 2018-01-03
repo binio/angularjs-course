@@ -63,7 +63,14 @@ Name <input type="text" ng-model="name"/>{{name}}
 <div ng-init="customers=[{joined:'2000-12-10', name:'thomas', city:'london', orderTotal:2001},{joined:'2000-10-10', name:'adam', city:'sutton', orderTotal:2001},{joined:'2000-12-11', name:'john', city:'croydon', orderTotal:2001}]"></div>
 Filter: <input type="text" ng-model="customerFilter.name">
 <table>
-    <tr ng-repeat="cust in customers |filter:customerFilter | orderBy:'name'">
+    <tr>
+        <td ng-click="sortBy='name';reverse!=reverse">name</td>
+        <td ng-click="sortBy='date';reverse!=reverse">date</td>
+        <td ng-click="sortBy='joined';reverse!=reverse">joined</td>
+        <td ng-click="sortBy='orderTotal';reverse!=reverse">orderTotal</td>
+    </tr>
+    <tr ng-repeat="cust in customers |filter:customerFilter | orderBy:sortBy:reverse">
+
         <td>{{cust.name | uppercase}}</td>
         <td>{{cust.joined | date}}</td>
         <!-- Look at https://docs.angularjs.org/api/ng/filter/date -->
