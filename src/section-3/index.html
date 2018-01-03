@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Controllers modules scope</title>
+</head>
+<body ng-app>
+Filter: <input type="text" ng-model="customerFilter.name">
+<table>
+    <tr>
+        <td ng-click="doSort('name')">name</td>
+        <td ng-click="doSort('joined')">date</td>
+        <td ng-click="doSort('joined')">joined</td>
+        <td ng-click="doSort('orderTotal')">orderTotal</td>
+    </tr>
+    <tr ng-repeat="cust in customers |filter:customerFilter | orderBy:sortBy:reverse">
+
+        <td>{{cust.name | uppercase}}</td>
+        <td>{{cust.joined | date}}</td>
+        <!-- Look at https://docs.angularjs.org/api/ng/filter/date -->
+        <td>{{cust.joined | date:'dd-MM-yyyy'}}</td>
+        <td>{{cust.orderTotal | currency:'PLN'}}</td>
+    </tr>
+</table>
+<script src="../includes/angular.js"></script>
+<script src="controllers/CustomerController.js"></script>
+</body>
+</html>
