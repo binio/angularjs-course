@@ -1,4 +1,4 @@
-
+//---- old way of defining controller in Angular 1.2
 // function CustomersController($scope) {
 //     $scope.customers = [
 //         {joined:'2000-12-10', name:'thomas', city:'london', orderTotal:2001},
@@ -13,7 +13,7 @@
 //     };
 // }
 
-app.controller('CustomersController', function ($scope) {
+angular.module('customersApp',[]).controller('CustomersController', ['$scope', function ($scope) {
     $scope.sortBy = 'name';
     $scope.reverse = false;
     $scope.customers= [
@@ -26,4 +26,4 @@ app.controller('CustomersController', function ($scope) {
         $scope.sortBy = propName;
         $scope.reverse = !$scope.reverse;
     };
-});
+}]);
