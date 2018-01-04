@@ -1,1 +1,1 @@
-angular.module('customerApp',[]);
+//var customersApp = angular.module('customersApp',[]);
