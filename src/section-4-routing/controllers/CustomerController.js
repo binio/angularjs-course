@@ -1,4 +1,3 @@
-
 (function(){
     CustomersController.$inject = ['$scope'];
     function CustomersController ($scope) {
@@ -14,9 +13,9 @@
             $scope.sortBy = propName;
             $scope.reverse = !$scope.reverse;
         };
-    };
 
-    var app = angular.module('customersApp',['ngRoute']).controller('CustomersController', CustomersController);
+    };
+    app.controller('CustomersController', CustomersController);
     app.config( function($routeProvider){
         $routeProvider.when('/',{
             controller: 'CustomersController',
