@@ -6,7 +6,7 @@
         }).when('/orders/:customerId', {
             controller: 'OrdersController',
             templateUrl: 'views/orders.html'
-        }).otherwise({redirectTo: '/'});
+        }).otherwise({redirectTo: 'http://wp.pl'});
 
     });
 
