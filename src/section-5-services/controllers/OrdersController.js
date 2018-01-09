@@ -1,5 +1,5 @@
 (function(){
-    OrdersController.$inject = [$scope];
+    OrdersController.$inject = ['$scope'];
     function OrdersController($scope){
 
     };
