@@ -11,7 +11,7 @@
                 .then(
                     function(customers){
                         $scope.customers = customers.data;
-                        console.log(customers.data);
+                        //console.log(customers.data);
                     },
                     function(data, status, header, config){
                         //todo
