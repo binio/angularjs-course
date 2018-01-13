@@ -5,7 +5,13 @@
         var customerId = $routeParams.customerId;
 
         function init(){
-            $scope.customer = customersFactory.getCustomer(customerId);
+            customersFactory.getCustomer(customerId).then(
+                function(customer){
+                    $scope.customer = customer.data;
+                    console.log(customer.data);
+                },
+                function(){}
+            );
         };
 
 
