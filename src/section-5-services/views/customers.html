@@ -8,7 +8,7 @@ Filter: <input type="text" ng-model="customerFilter.name">
         <td ng-click="doSort('orderTotal')">orderTotal</td>
         <td>link</td>
     </tr>
-    <tr data-ng-repeat="cust in customers |filter:customerFilter | orderBy:sortBy:reverse">
+    <tr data-ng-repeat="cust in customers | orderBy:sortBy:reverse">
 
         <td>{{cust.name | uppercase}}</td>
         <td>{{cust.joined | date}}</td>
